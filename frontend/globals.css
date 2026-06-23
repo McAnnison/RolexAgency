@@ -1,0 +1,129 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Brand Color Palette */
+:root {
+  --sand: #f7f2ea;
+  --sand-deep: #efe7dc;
+  --ink: #0b1414;
+  --pine: #0f2a26;
+  --copper: #c97b5a;
+  --gold: #d1a864;
+}
+
+/* Base Layout */
+body {
+  font-family: var(--font-space-grotesk), sans-serif;
+  background-color: var(--sand);
+  color: var(--ink);
+  overflow-x: hidden;
+  max-width: 100vw;
+}
+
+/* Typography & Accents */
+.serif { 
+  font-family: var(--font-cinzel), serif; 
+  letter-spacing: 0.02em; 
+}
+
+.accent-gradient { 
+  background: linear-gradient(135deg, var(--copper), var(--gold)); 
+}
+
+/* UI Components */
+.glass { 
+  background: rgba(255, 255, 255, 0.75); 
+  backdrop-filter: blur(14px); 
+  border: 1px solid rgba(11, 20, 20, 0.10); 
+}
+
+.soft-shadow { 
+  box-shadow: 0 28px 70px rgba(11, 20, 20, 0.12); 
+}
+
+.focus-ring:focus { 
+  outline: 2px solid rgba(201, 123, 90, 0.65); 
+  outline-offset: 3px; 
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.35rem 0.9rem;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  background: rgba(11, 20, 20, 0.35);
+  color: rgba(255, 255, 255, 0.92);
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.35em;
+}
+
+/* Background Visuals */
+.page-bg { 
+  position: fixed; 
+  inset: 0; 
+  z-index: -10; 
+  pointer-events: none; 
+}
+
+.bg-grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(circle at 12% 18%, rgba(201, 123, 90, 0.12), transparent 45%),
+    radial-gradient(circle at 84% 12%, rgba(209, 168, 100, 0.18), transparent 48%),
+    radial-gradient(circle at 80% 78%, rgba(15, 42, 38, 0.10), transparent 52%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.75), rgba(247, 242, 234, 0.75));
+}
+
+.orb {
+  position: absolute;
+  width: 380px;
+  height: 380px;
+  border-radius: 999px;
+  filter: blur(60px);
+  opacity: 0.6;
+}
+
+.orb-a { top: -120px; left: -80px; background: rgba(201, 123, 90, 0.35); }
+.orb-b { top: 30%; right: -120px; background: rgba(209, 168, 100, 0.35); }
+.orb-c { bottom: -160px; left: 10%; background: rgba(15, 42, 38, 0.20); }
+
+/* Hero Page Specifics */
+.bg-hero-overlay {
+  background: linear-gradient(180deg, rgba(11, 20, 20, 0.65), rgba(11, 20, 20, 0.25) 45%, rgba(11, 20, 20, 0.75));
+}
+
+.hero-text-shadow { text-shadow: 0 14px 40px rgba(0, 0, 0, 0.55); }
+.hero-sub-shadow { text-shadow: 0 10px 26px rgba(0, 0, 0, 0.45); }
+.hero-accent-shadow { filter: drop-shadow(0 14px 26px rgba(0, 0, 0, 0.35)); }
+
+/* Transitions & Animations */
+.section-sand { 
+  background: linear-gradient(180deg, var(--sand), var(--sand-deep)); 
+}
+
+@keyframes sectionIn {
+  0% { opacity: 0; transform: translateY(24px) scale(0.99); }
+  100% { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.section-animate { 
+  animation: sectionIn 0.7s ease both; 
+}
+
+/* Screen Reader Utility */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}

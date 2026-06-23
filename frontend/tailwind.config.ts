@@ -13,6 +13,12 @@ const config: Config = {
         'gradient-conic': 'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
       },
       colors: {
+        sand: 'var(--sand)',
+        'sand-deep': 'var(--sand-deep)',
+        ink: 'var(--ink)',
+        pine: 'var(--pine)',
+        copper: 'var(--copper)',
+        gold: 'var(--gold)',
         primary: {
           50: '#fdf2f8',
           500: '#a855f7',

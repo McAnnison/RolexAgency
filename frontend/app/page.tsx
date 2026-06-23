@@ -1,34 +1,41 @@
 'use client'
+import Link from 'next/link'
 
-export default function Home() {
+export default function LandingPage() {
   return (
-    <main className="min-h-screen bg-gradient-to-br from-primary-900 to-primary-500 flex flex-col items-center justify-center p-8 text-white">
-      <div className="text-center max-w-4xl mx-auto">
-        <h1 className="text-6xl md:text-7xl font-bold mb-8 bg-gradient-to-r from-white to-gray-200 bg-clip-text text-transparent drop-shadow-2xl">
-          Rollex Multimedia Agency
-        </h1>
-        <p className="text-xl md:text-2xl mb-12 opacity-90 leading-relaxed">
-          The Fashion Gateway. Digitize your talent onboarding - register, submit portfolio, track status. Professional platform for aspiring models.
-        </p>
-        <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <a
-            href="/register"
-            className="bg-white text-primary-900 px-12 py-6 rounded-full text-xl font-semibold hover:bg-gray-100 transition-all duration-300 shadow-2xl hover:shadow-3xl transform hover:-translate-y-1"
-          >
-            Register as Talent
-          </a>
-          <a
-            href="/login"
-            className="border-2 border-white px-12 py-6 rounded-full text-xl font-semibold hover:bg-white hover:text-primary-900 transition-all duration-300 shadow-xl hover:shadow-2xl transform hover:-translate-y-1"
-          >
-            Admin Login
-          </a>
+    <main className="min-h-[calc(100vh-80px)] flex flex-col justify-center items-center relative overflow-hidden section-animate">
+      <div className="absolute inset-0 z-0">
+        <img src="/assets/landingPage.jpg" alt="Models" className="w-full h-full object-cover brightness-[0.4]" />
+        <div className="absolute inset-0 bg-hero-overlay" />
+      </div>
+      <div className="relative z-10 text-center px-4 max-w-5xl">
+        <div className="flex justify-center mb-4">
+          <span className="badge">Casting 2026 open</span>
         </div>
-        <p className="mt-12 text-lg opacity-75">
-          Secure • Responsive • Modern
+        <h1 className="serif text-4xl md:text-8xl mb-4 text-white hero-text-shadow leading-tight">
+          UNLEASH YOUR<br />
+          <span className="italic text-transparent bg-clip-text accent-gradient hero-accent-shadow">POTENTIAL</span>
+        </h1>
+        <p className="text-xs md:text-sm font-light tracking-[0.28em] mb-12 text-white/90 uppercase hero-sub-shadow">
+          Apply to the future of fashion
         </p>
+        <Link
+          href="/details"
+          className="inline-block px-12 py-5 rounded-full accent-gradient text-white uppercase text-xs font-bold tracking-[0.2em] hover:scale-105 transition-all duration-300"
+        >
+          Begin Application
+        </Link>
+
+        <div className="mt-10 flex flex-wrap justify-center gap-6 text-[10px] tracking-[0.28em] uppercase text-white/80">
+          <span className="flex items-center gap-2"><span className="w-2 h-2 rounded-full bg-gold"></span>Editorial</span>
+          <span className="flex items-center gap-2"><span className="w-2 h-2 rounded-full bg-copper"></span>Runway</span>
+          <span className="flex items-center gap-2"><span className="w-2 h-2 rounded-full bg-white"></span>Digital</span>
+        </div>
+      </div>
+
+      <div className="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce text-white/90 opacity-40">
+        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path></svg>
       </div>
     </main>
   )
 }
-
